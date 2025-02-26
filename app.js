@@ -9,8 +9,10 @@ function adicionarAmigo() {
     
     if (listaDeNomes.includes(nomeAmigo)){
         alert("Nome já adicionado a lista.");
+        limparCampo();
     } else if (nomeAmigo == "" || validacaoNome.test(nomeAmigo)) {
         alert('Por favor, preencha um nome válido');
+        limparCampo();
     } else {
         listaDeNomes.push(nomeAmigo);
         exibirTextoNaTela('listaAmigos', listaDeNomes.map(nome => `<li>${nome}</li>`).join(''));
